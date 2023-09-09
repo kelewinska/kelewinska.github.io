@@ -140,6 +140,7 @@ header nav ul li:last-child {
     display: flex;
     align-items: center;
     justify-content: center;
+    line-height: 1.7;
     flex-direction: column;
     margin-bottom: 4rem;
 }
@@ -181,7 +182,8 @@ header nav ul li:last-child {
 }
 
 ul.list {
-    list-style-type: disc;
+    list-style-type: circle;
+    margin-bottom: 10px;
 }
 
 /*Footer*/
