@@ -58,7 +58,7 @@ a:hover {
 html {
     height: 100%;    
     /*declare a font size so we can use rem (relative to root element) units*/
-    font-size: 14px;
+    font-size: 16px;
 }
 
 body {
@@ -183,7 +183,7 @@ header nav ul li:last-child {
 
 ul.list {
     list-style-type: circle;
-    margin-bottom: 10px;
+    margin-bottom: 1rem;
 }
 
 /*Footer*/
