@@ -55,6 +55,10 @@ a:hover {
     color: #fff;
 }
 
+.emphasized { 
+    font-style: italic; 
+    
+
 /* .italic-text {
     font-style: italic;
   } */
@@ -162,7 +166,7 @@ header nav ul li:last-child {
 }
 
 .name-section .name {
-    font-size: 2.7rem;
+    font-size: 2.3rem;
     line-height: 1;
 }
 
@@ -187,7 +191,7 @@ header nav ul li:last-child {
 
 ul.list {
     list-style-type: circle;
-    margin-bottom: 2rem;
+    margin-bottom: 2rem 0;
 }
 
 /*Footer*/
