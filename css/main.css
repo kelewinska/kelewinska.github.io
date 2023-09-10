@@ -38,6 +38,8 @@ a {
     transition: color 0.25s linear;
 }
 
+a.list:link {color: #76b6d6;}
+
 a:hover {
     color: #48A4D2;
 }
@@ -54,14 +56,6 @@ a:hover {
 .icon:hover {
     color: #fff;
 }
-
-.emphasized { 
-    font-style: italic; 
-} 
-
-/* .italic-text {
-    font-style: italic;
-  } */
 
 html {
     height: 100%;    
@@ -191,8 +185,9 @@ header nav ul li:last-child {
 
 ul.list {
     list-style-type: circle;
-    margin-bottom: 2rem ;
+    margin-bottom: 2rem;
 }
+.emphasized { font-style: italic; }
 
 /*Footer*/
 
