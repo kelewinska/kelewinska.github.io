@@ -167,6 +167,8 @@ header nav ul li:last-child {
     display: flex;
     justify-content: center;
     text-align: center;
+    letter-spacing: 1.5px;
+    line-height: 3;
 }
 
 .name-section .name {
