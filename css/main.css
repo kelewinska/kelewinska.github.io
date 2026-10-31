@@ -209,6 +209,24 @@ ul.list {
 }
 .emphasized { font-style: italic; }
 
+ /* buttons */
+.btn-green {
+    display: inline-block;
+    padding: 1px 6px;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: #2584B3;
+    border: 1px solid #2584B3;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.btn-green:hover {
+    color: #4298C3;
+    background-color: #213539;
+}
+
+
 /*Footer*/
 
 footer {
