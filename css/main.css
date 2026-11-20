@@ -84,7 +84,7 @@ body {
     /*alignment and display*/
     /* display: flex; */
     /* flex-direction: column; */
-    /* justify-content: center; */
+    justify-content: flex-start;
     /* align-items: center; */
 
     background-color: #131f21;
@@ -117,7 +117,7 @@ body {
     margin-inline: auto;
     padding-inline: 1rem;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: column;
 }
@@ -343,7 +343,7 @@ footer ul li:last-child {
     color: rgba(255, 255, 255, 0.8);                /* was fade(white, 80%) */
     font-family: 'Open Sans', sans-serif;
     /* CHANGED: the left margin reserves room for the dates (was: 20px auto) */
-    margin: 20px 0 20px calc(var(--date-w) + var(--date-gap));
+    margin: 0px 0 20px calc(var(--date-w) + var(--date-gap));
     letter-spacing: 0.5px;
     position: relative;
     line-height: 1.4em;
