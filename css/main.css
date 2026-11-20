@@ -82,18 +82,40 @@ body {
     line-height: 1.6;
     
     /*alignment and display*/
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* justify-content: center; */
+    /* align-items: center; */
 
     background-color: #131f21;
     background-size: 100%;
 
 }
 
-.container {
+/* .container {
     max-width: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+} */
+
+.container {
+    width: 100%;
+    max-width: 700px;   /* your "wide" cap */
+    margin-inline: auto;
+    padding-inline: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container-pub {
+    width: 100%;
+    max-width: 700px;   /* your "wide" cap */
+    margin-inline: auto;
+    padding-inline: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -115,6 +137,9 @@ header {
 header nav ul {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;           /* add this */
+    justify-content: center;   /* add this */
+    row-gap: 0.5rem;           /* add this */
 }
 
 header nav ul li {
@@ -185,6 +210,11 @@ header nav ul li:last-child {
     font-size: 1rem;
 }
 
+.main pp {
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+}
+
 /* .photo {
     max-width: 200px;
     background-size: 100px 100px;
@@ -195,7 +225,7 @@ header nav ul li:last-child {
     margin-bottom: 4rem;
 } */
 
-ul.list {
+/* ul.list {
     list-style-type: circle;
     
     margin-bottom: 2rem;
@@ -206,7 +236,25 @@ ul.list {
     padding: 20px;   
     text-align: left;  
     font-weight: 100;
+} */
+ul.list {
+    list-style-type: circle;
+    list-style-position: outside;
+    width: 100%;
+    max-width: 700px;       /* match container-pub */
+    min-width: 0;
+    margin-inline: auto;
+    margin-bottom: 2rem;
+    padding: 0px 0px 0px 1.5rem;   /* extra left space for the circle markers */
+    overflow-wrap: anywhere;          /* lets long links break */
+    letter-spacing: 0.5px;
+    position: relative;
+    line-height: 1.4em;
+    font-size: 1.03em;
+    text-align: left;
+    font-weight: 100;
 }
+
 .emphasized { font-style: italic; }
 
  /* buttons */
@@ -232,15 +280,18 @@ ul.list {
 footer {
     display: flex;
     justify-content: center;
+    width: 100%;
 }
 
 footer ul {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
 }
 
 footer ul li {
     margin-right: 1rem;
+    overflow-wrap: anywhere;
 }
 
 footer ul li:last-child {
@@ -253,120 +304,139 @@ footer ul li:last-child {
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700|Oswald:400,300,700);
 
 #content {
-    margin-top: 50px;
-    text-align: center;  
+    width: 100%;               
     max-width: 700px;
-  }
+    margin-top: 50px;
+    margin-inline: auto;
+    text-align: center;
+    padding-left: calc(var(--date-w) + var(--date-gap));
+}
 
 .timeline {
+    /* NEW: sizes used below, so phones only need to change these */
+    --pad: 20px;                 /* same as the padding below */
+    --date-w: 110px;             /* width of the date column */
+    --date-gap: 20px;            /* space between date and vertical line */
+
     border-left: 4px solid #4298C3;
     border-bottom-right-radius: 4px;
-    border-top-right-radius: 4px;    
-    background: fade(white, 3%);
-    color: fade(white, 80%);
-    font-family: 'Open Sans', 'sans-serif';  
-    margin: 20px auto;  
-    letter-spacing: 0.5px;   
+    border-top-right-radius: 4px;
+    /* background: rgba(255, 255, 255, 0.03);          was fade(white, 3%) */
+    color: rgba(255, 255, 255, 0.8);                /* was fade(white, 80%) */
+    font-family: 'Open Sans', sans-serif;
+    /* CHANGED: the left margin reserves room for the dates (was: 20px auto) */
+    margin: 20px 0 20px calc(var(--date-w) + var(--date-gap));
+    letter-spacing: 0.5px;
     position: relative;
     line-height: 1.4em;
-    font-size: 1.03em;   
-    padding: 20px;   
+    font-size: 1.03em;
+    padding: var(--pad);
     list-style: none;
-    text-align: left;  
-    font-weight: 100;  
-    max-width: 50%; 
+    text-align: left;
+    font-weight: 100;
+    /* CHANGED: no max-width: 50%. The width is now whatever is left of #content */
+    min-width: 0;
+    overflow-wrap: anywhere;                        /* NEW: long words/links break */
 }
+
 h1, h2, h3 {
-     font-family: 'Open Sans', 'sans-serif';
-     letter-spacing: 1.5px;
-     font-weight: 100;
-     font-size: 1.2em;    
+    font-family: 'Open Sans', sans-serif;
+    letter-spacing: 1.5px;
+    padding-bottom: 8px;  
+    font-weight: 100;
+    font-size: 1.2em;
 }
-    
+
 .event {
-      border-bottom: 1px dashed fade(white, 10%);
-      padding-bottom: (50px * 0.5);
-      margin-bottom: 50px;  
-      position: relative;
-      margin-right: -100px;
-  
-      &:last-of-type { 
-        padding-bottom: 0;
-        margin-bottom: 0; 
-        border: none;      
-      }
-  
-      &:before, &:after {
-        position: absolute;
-        display: block;
-        margin-left: -180px;
-        text-align: right;
-        top: 0;
-      }
-  
-      &:before {
-        left: (((120px * 0.6) + 50px + 4px + 11px + (4px * 2)) * 1.5) * -1;    
-        color: fade(white, 40%);    
-        content: attr(data-date);
-        text-align: right;
-        font-weight: 100;    
-        font-size: 0.9em;
-        min-width: 120px ;
-      }
-  
-      &:after {
-        box-shadow: 0 0 0 4px  fade(#4298C3,100%);    
-        left: (50px + 4px + (11px * 0.35)) * -1;        
-        background: lighten(#252827,5%);    
-        border-radius: 50%;  
-        height: 11px ;
-        width: 11px ;
-        content: "";
-        top: 5px;
-      }
+    /* border-bottom: 1px dashed rgba(255, 255, 255, 0.1);   was fade(white, 10%) */
+    max-width: 570px;
+    padding-bottom: 15px;                                  /* was (50px * 0.5) */
+    margin-bottom: 10px;
+    position: relative;
+    /* REMOVED: margin-right: -100px (it pushed the text outside the box) */
+}
+
+.event:last-of-type {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    border: none;
+}
+
+.event:before,
+.event:after {
+    position: absolute;
+    display: block;
+    top: 0;
+    text-align: right;
+    /* REMOVED: margin-left: -180px (replaced by the calculated left values) */
+}
+
+.event:before {
+    /* moves left by: padding + line + gap + date column */
+    left: calc(-1 * (var(--pad) + 4px + var(--date-gap) + var(--date-w)));
+    width: var(--date-w);                                  /* was min-width: 120px */
+    /* color: rgba(255, 255, 255, 0.4);                       was fade(white, 40%) */
+    content: attr(data-date);
+    text-align: right;
+    font-weight: 100;
+    font-size: 0.9em;
+}
+
+.event:after {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 8px;
+    left: calc(-1 * (var(--pad) + 2px) - 3px);   /* centered on the line: half the dot is 3px */
+    width: 0px;
+    height: 0px;
+    border-radius: 50%;
+    background: #4298C3;
+    box-shadow: none;                            /* removes the big ring */
 }
 
 .education {
-    border-bottom: 1px dashed fade(#4298C3, 10%);
-    padding-bottom: (50px * 0.5);
-    margin-bottom: 50px;  
+    /* border-bottom: 1px dashed rgba(66, 152, 195, 0.1);     was fade(#4298C3, 10%) */
+    max-width: 570px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
     position: relative;
-    margin-right: -100px;
     color: #6aa2be;
+}
 
+.education:last-of-type {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    border: none;
+}
 
-    &:last-of-type { 
-      padding-bottom: 0;
-      margin-bottom: 0; 
-      border: none;      
-    }
+.education:before,
+.education:after {
+    position: absolute;
+    display: block;
+    top: 0;
+    text-align: right;
+}
 
-    &:before, &:after {
-      position: absolute;
-      display: block;
-      margin-left: -180px;
-      text-align: right;
-      top: 0;
-    }
+.education:before {
+    left: calc(-1 * (var(--pad) + 4px + var(--date-gap) + var(--date-w)));
+    width: var(--date-w);
+    /* color: rgba(66, 152, 195, 0.4);                        was fade(#4298C3, 40%) */
+    content: attr(data-date);
+    text-align: right;
+    font-weight: 100;
+    font-size: 0.9em;
+}
 
-    &:before {
-      left: (((120px * 0.6) + 50px + 4px + 11px + (4px * 2)) * 1.5) * -1;    
-      color: fade(#4298C3, 40%);    
-      content: attr(data-date);
-      text-align: right;
-      font-weight: 100;    
-      font-size: 0.9em;
-      min-width: 120px ;
-    }
-
-    &:after {
-      box-shadow: 0 0 0 4px  fade(#4298C3,100%);    
-      left: (50px + 4px + (11px * 0.35)) * -1;        
-      background: lighten(#252827,5%);    
-      border-radius: 50%;  
-      height: 11px ;
-      width: 11px ;
-      content: "";
-      top: 5px;
-    }
+.education:after {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 8px;
+    left: calc(-1 * (var(--pad) + 2px) - 3px);   /* centered on the line: half the dot is 3px */
+    width: 0px;
+    height: 0px;
+    border-radius: 50%;
+    background: #4298C3;
+    box-shadow: none;                            /* removes the big ring */
 }
