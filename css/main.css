@@ -176,11 +176,29 @@ header nav ul li:last-child {
     position: relative;
     line-height: 1.4em;
     font-size: 1.03em;   
+    padding: 20px 10px 20px 10px;   
+    list-style: none;
+    text-align: left;  
+    font-weight: 100;
+}
+
+.main-ab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* line-height: 1.7; */
+    flex-direction: column;
+    margin-bottom: 4rem;
+    letter-spacing: 0.5px;   
+    position: relative;
+    line-height: 1.4em;
+    font-size: 1.03em;   
     padding: 20px;   
     list-style: none;
     text-align: left;  
     font-weight: 100;
 }
+
 
 .name-section {
     font-family: 'Raleway', 'sans-serif';
@@ -306,8 +324,8 @@ footer ul li:last-child {
 #content {
     width: 100%;               
     max-width: 700px;
-    margin-top: 50px;
-    margin-inline: auto;
+    margin-top: 50px 0;
+    /* margin-inline: auto; */
     text-align: center;
     padding-left: calc(var(--date-w) + var(--date-gap));
 }
