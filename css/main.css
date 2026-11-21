@@ -217,6 +217,7 @@ header nav ul li:last-child {
 .name-section .name {
     font-size: 2.3rem;
     line-height: 1;
+    padding: 50px 0px 0px 0px;
 }
 
 .name-section .tagline {
